@@ -1,0 +1,338 @@
+        load ax 0
+        push ax
+        load ax 17488
+        push ax
+        load ax 16758
+        push ax
+        load ax 16599
+        push ax
+        load ax 16285
+        push ax
+        load ax 16094
+        push ax
+        load ax 15505
+        push ax
+        load ax 15417
+        push ax
+        load ax 14832
+        push ax
+        load ax 14450
+        push ax
+        load ax 13893
+        push ax
+        load ax 13926
+        push ax
+        load ax 13437
+        push ax
+        load ax 12833
+        push ax
+        load ax 12741
+        push ax
+        load ax 12533
+        push ax
+        load ax 11504
+        push ax
+        load ax 11342
+        push ax
+        load ax 10503
+        push ax
+        load ax 10550
+        push ax
+        load ax 10319
+        push ax
+        load ax 975
+        push ax
+        load ax 1007
+        push ax
+        load ax 892
+        push ax
+        load ax 893
+        push ax
+        load ax 660
+        push ax
+        load ax 743
+        push ax
+        load ax 267
+        push ax
+        load ax 344
+        push ax
+        load ax 264
+        push ax
+        load ax 339
+        push ax
+        load ax 208
+        push ax
+        load ax 216
+        push ax
+        load ax 242
+        push ax
+        load ax 172
+        push ax
+        load ax 74
+        push ax
+        load ax 49
+        push ax
+        load ax 119
+        push ax
+        load ax 113
+        push ax
+        load ax 119
+        push ax
+        load ax 106
+        push ax
+        load bx 1
+
+
+x1:     pop ax
+        push bx
+        push ax
+        load ax 389
+
+        push ax
+        push bx
+        jump_to x2
+        xor
+        print_top
+        load ax 1
+        push ax
+        add
+        pop bx
+        if_not_zero
+            jump_to x1
+        end_if
+
+
+        load ax 98426
+        push ax
+        load ax 97850
+        push ax
+        load ax 97604
+        push ax
+        load ax 97280
+        push ax
+        load ax 96815
+        push ax
+        load ax 96443
+        push ax
+        load ax 96354
+        push ax
+        load ax 95934
+        push ax
+        load ax 94865
+        push ax
+        load ax 94952
+        push ax
+        load ax 94669
+        push ax
+        load ax 94440
+        push ax
+        load ax 93969
+        push ax
+        load ax 93766
+        push ax
+        load bx 99
+
+
+x3:     pop ax
+        push bx
+        push ax
+        load ax 568
+
+        push ax
+        push bx
+        jump_to x2
+        xor
+        print_top
+        load ax 1
+        push ax
+        add
+        pop bx
+        if_not_zero
+            jump_to x3
+        end_if
+
+
+        load ax 101141058
+        push ax
+        load ax 101060206
+        push ax
+        load ax 101030055
+        push ax
+        load ax 100998966
+        push ax
+        load ax 100887990
+        push ax
+        load ax 100767085
+        push ax
+        load ax 100707036
+        push ax
+        load ax 100656111
+        push ax
+        load ax 100404094
+        push ax
+        load ax 100160922
+        push ax
+        load ax 100131019
+        push ax
+        load ax 100111100
+        push ax
+        load ax 100059926
+        push ax
+        load ax 100049982
+        push ax
+        load ax 100030045
+        push ax
+        load ax 9989997
+        push ax
+        load ax 9981858
+        push ax
+        load ax 9980815
+        push ax
+        load ax 9978842
+        push ax
+        load ax 9965794
+        push ax
+        load ax 9957564
+        push ax
+        load ax 9938304
+        push ax
+        load ax 9935427
+        push ax
+        load ax 9932289
+        push ax
+        load ax 9931494
+        push ax
+        load ax 9927388
+        push ax
+        load ax 9926376
+        push ax
+        load ax 9923213
+        push ax
+        load ax 9921394
+        push ax
+        load ax 9919154
+        push ax
+        load ax 9918082
+        push ax
+        load ax 9916239
+        push ax
+        load bx 765
+
+
+x4:     pop ax
+        push bx
+        push ax
+        load ax 1023
+        push ax
+        push bx
+        jump_to x2
+        xor
+        print_top
+        load ax 1
+        push ax
+        add
+        pop bx
+        if_not_zero
+            jump_to x4
+        end_if
+        exit
+
+x2:     load ax 2
+        push ax
+
+x5:     jump_to  x6
+
+x7:     if_zero
+            pop_out
+            jump_to x8
+        end_if
+        pop_out
+        jump_to x9
+
+x10:    if_zero
+        pop_out
+        jump_to x8
+        end_if
+
+        pop_out
+        pop ax
+        load bx 1
+        push bx
+        sub
+        if_zero
+            pop_out
+            pop bx
+            push ax
+            push bx
+            jump_top
+        end_if
+        push ax
+
+x8:     load bx 1
+        push bx
+        add
+        jump_to x5
+
+x6:     clone
+        load ax 2
+        push ax
+
+x12:    sub
+        if_zero
+            pop_out
+            load ax 1
+            push ax
+            jump_to x7
+        end_if
+        pop_out
+        clone
+        push ax
+        modulo
+        if_zero
+            jump_to x7
+        end_if
+        pop_out
+        clone
+        push ax
+        load ax 1
+        push ax
+        add
+        clone
+        pop ax
+        jump_to x12
+
+x9:     clone
+        clone
+        load bx 0
+        push bx
+
+x11:    load ax 10
+        push ax
+        multiply
+        pop bx
+        push ax
+        modulo
+        push bx
+        add
+        pop bx
+        pop ax
+        clone
+        push bx
+        sub
+        if_zero
+            pop_out
+            load bx 1
+            push bx
+            jump_to x10
+        end_if
+        pop_out
+        push ax
+        load ax 10
+        push ax
+        divide
+        if_zero
+            jump_to x10
+        end_if
+        clone
+        push bx
+        jump_to x11
