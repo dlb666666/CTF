@@ -1,0 +1,28 @@
+When writing a script, there are a couple of things we need to juggle
+thinking about.
+    1. The logic - Algorithm, complexity, performance and adaptations.
+    2. Code modularity- Which parts of the algo are replaceable
+        or reusable components. This way we can swap other particular
+        functions as the usage requirements change.
+    3. Language heuristics and other particularities. E.g. which library or
+        language constructs to use to do what. The logic and to a good
+        extent the modularity part should be completely independent of this.
+    4. Code cleanliness - Modularity is a part of this. But modularity
+        plays a bigger role in functionality/flexibility/extensibility.
+        Here, we want to focus on fine grained clean up to make the code
+        display ready.
+
+If you try to directly write the script, you'll end up having to manage all
+4 things at once and this can be very difficult even for experienced
+programmers and it's overall not so much of a good approach.
+
+Instead, split up the process into 4 parts:
+    1. Figure out all of the logical components on paper (flow charts are a
+        good idea here - just unleash your thoughts and ideas on paper in
+        free form).
+    2. Refine the logical components on paper and start identifying
+        patterns for modularity (replaceable and reusable components).
+    3. Begin writing code in your language of preference using the results
+        of steps 1 and 2.
+    4. Once the code works, then you can clean up the small nitty-gritty
+        details and publish it.
