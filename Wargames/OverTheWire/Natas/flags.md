@@ -21,6 +21,7 @@ http://natas0.natas.labs.overthewire.org
 **natas14:** Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1  
 **natas15:** AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J  
 **natas16:** WaIHEacj63wnNIBROHeqi3p9t0m5nhmh  
+**natas17:** 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw  
 
 ## Brief Explainations:
 **0:** http://natas0.natas.labs.overthewire.org  
@@ -104,3 +105,20 @@ Gotchas:
     - the like clause in SQL is case insensitive, so we need to fix that.  
       Use something like COLLATE or BINARY.  
 
+**16 -> 17:** *I needed a hint, so I got a pretty good one from
+https://www.zigosec.com/2018/09/22/overthewire-natas-16/: they don't block
+$,(,) so we can exploit command substitution :).* We can't modify files on
+the system otherwise I could have overwritten dictionary.txt and just queried
+that with a "." grep command. `^$(cut -c1-3 /etc/natas_webpass/natas16)` is
+nice but there's the issue of case insensitivity from grep and numbers aren't
+supported.
+
+I looked at the solution from the above blog only to find that the author was
+guessing the password character by character. Was kinda disappointed since I
+was expecting something else (I particularly avoided this method since I
+thought that it felt pretty inefficient and that there was a more impressive
+hack). Every one seems to have used to same approach, so I stopped cribbing
+and just made a script. It took FOREVER to run off of my network.
+
+With this challenge, I learnt that I need to use scripts more and if a method
+works, I should just use it even if it's slow. Hackers are patient.
