@@ -22,6 +22,7 @@ http://natas0.natas.labs.overthewire.org
 **natas15:** AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J  
 **natas16:** WaIHEacj63wnNIBROHeqi3p9t0m5nhmh  
 **natas17:** 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw  
+**natas18:** xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP
 
 ## Brief Explainations:
 **0:** http://natas0.natas.labs.overthewire.org  
@@ -122,3 +123,12 @@ and just made a script. It took FOREVER to run off of my network.
 
 With this challenge, I learnt that I need to use scripts more and if a method
 works, I should just use it even if it's slow. Hackers are patient.
+
+
+**17 -> 18:** Turns out that the level is not broken. It's just a next level
+blind SQL injection scenario where we can't see the output but instead need to
+launch a timing attack. Read this: http://www.sqlinjection.net/time-based/ to
+gain knowledge from existing literature. Used "AND SLEEP(5); #" and just
+slightly modified my previous script for Natas15 (the binary version since
+otherwise it would be impossible to complete this in a reasonable amount of
+time.
