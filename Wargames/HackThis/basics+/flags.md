@@ -12,3 +12,7 @@ the first few bytes really seemed special. Remembered John Hammond mentioning
 something about binwalk so I tried it out on this:  
 `PC bitmap, Windows 3.x format,, 213 x 108 x 24`  
 Thus changed the file extension to .bmp and voila: an image with the credentials.
+
+### Basics+ Level2:
+This challenge was kinda weird. Basically they wanted us to spoof the User-Agent
+header and set it to "secure_user_agent".
