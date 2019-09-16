@@ -24,6 +24,7 @@ http://natas0.natas.labs.overthewire.org
 **natas17:** 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw  
 **natas18:** xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP  
 **natas19:** 4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs  
+**natas20**: eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF  
 
 ## Brief Explainations:
 **0:** http://natas0.natas.labs.overthewire.org  
@@ -139,3 +140,16 @@ sucks (CH7 of the WAHH was all about this kind of stuff). The fact that there
 are only 640 possible values for session ids and that the session id was just
 a plaintext integer value meant that we could easily enumerate all session ids
 until we find the one that corresponds to the admin's.  
+
+**19->20:** Pretty similar to the last challenge. I first generated some session
+tokens by sending test requests using ("admin", "pass") as credentials and I
+noticed that only a few characters were changing in each token and that there
+were about 100,000 such numbers that I had to try out (not even letters, just
+numbers). I've been itching to create a multiprocessing-style parallel requests
+engine that would make the most of my hardware so without thinking anymore I
+made one and after about some 30 minutes (maybe more) later, I found the session
+id. But this was stupid and after looking at a write-up, *I realized that I just
+needed to decode the hex string session id and then just enumerate the 640
+possibilities* instead of the freckin' 100,000. **facepalm** I was pretty blinded
+by my desire to build a good tool. But hey, now I have a powerful tool at my
+disposal :).  
