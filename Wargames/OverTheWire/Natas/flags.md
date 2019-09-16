@@ -22,7 +22,8 @@ http://natas0.natas.labs.overthewire.org
 **natas15:** AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J  
 **natas16:** WaIHEacj63wnNIBROHeqi3p9t0m5nhmh  
 **natas17:** 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw  
-**natas18:** xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP
+**natas18:** xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP  
+**natas19:** 4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs  
 
 ## Brief Explainations:
 **0:** http://natas0.natas.labs.overthewire.org  
@@ -131,4 +132,10 @@ launch a timing attack. Read this: http://www.sqlinjection.net/time-based/ to
 gain knowledge from existing literature. Used "AND SLEEP(5); #" and just
 slightly modified my previous script for Natas15 (the binary version since
 otherwise it would be impossible to complete this in a reasonable amount of
-time.
+time).
+
+**18 -> 19:** This was a pretty simple challenge where the session management
+sucks (CH7 of the WAHH was all about this kind of stuff). The fact that there
+are only 640 possible values for session ids and that the session id was just
+a plaintext integer value meant that we could easily enumerate all session ids
+until we find the one that corresponds to the admin's.  
