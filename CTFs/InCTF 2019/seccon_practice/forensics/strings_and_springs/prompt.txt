@@ -1,0 +1,10 @@
+
+
+Strings and Springs
+50
+
+Just a simple challenge to find the flag.
+
+You can refer to bi0s wiki: https://wiki.bi0s.in/forensics/intro/
+
+Flag format for this challenge is: flag{}
