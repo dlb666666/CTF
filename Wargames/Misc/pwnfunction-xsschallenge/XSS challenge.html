@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XSS challenge</title>
+        <!-- Custom -->
+        <style>
+            body {
+                padding: 20px;
+            }
+        </style>
+        <!-- Bootstrap(4.4.1) -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <u><b>Rules</b></u>
+        <ul>
+            <li>Pop an <code>alert(1337)</code> on <code>vulnerableweb.site</code>.</li>
+            <li>No user interaction.</li>
+        </ul>
+        <hr />
+        <u><b>Solvers</b></u>
+        <ul>
+            <li><a target="_blank" href="//twitter.com/@lbherrera_">Luan Herrera</a></li>
+            <li><a target="_blank" href="//twitter.com/@terjanq">terjanq</a></li>
+            <li><a target="_blank" href="//twitter.com/@RenwaX23">Renwa</a></li>
+            <li><a target="_blank" href="//twitter.com/@Abdulahhusam">Abdullah Hussam</a></li>
+            <li><a target="_blank" href="//twitter.com/@suskind">Gamboa</a></li>
+            <li><a target="_blank" href="//twitter.com/@Zeev42746664">Zeev</a></li>
+            <li><a target="_blank" href="//twitter.com/@BenHayak">Ben Hayak</a></li>
+            <li><a target="_blank" href="//twitter.com/@20backslash">20\</a></li>
+        </ul>
+        <hr />
+        
+        <!-- Challenge -->
+        <number id="number" style="display:none"></number>
+        
+        <div class="alert alert-primary" role="alert" id="welcome"></div>
+        <button id="keanu" class="btn btn-primary btn-sm" data-toggle="popover" data-content="DM @PwnFunction" data-trigger="hover" onclick="alert(`If you solved it, DM me @PwnFunction :)`)">Solved it?</button> 
+        
+        <!-- DOMPurify(2.0.7) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.7/purify.min.js" integrity="sha256-iO9yO1Iy0P2hJNUeAvUQR2ielSsGJ4rOvK+EQUXxb6E=" crossorigin="anonymous"></script>
+        <!-- Jquery(3.4.1), Popper(1.16.0), Bootstrap(4.4.1) -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <script>
+            /* Input */
+            var number = (new URL(location).searchParams.get('number') || "7")[0], 
+                name = DOMPurify.sanitize(new URL(location).searchParams.get('name'));
+            $('number#number').html(number);
+            $('#welcome').html(`Welcome <b>${name || "Baby Yoda"}!</b>`);
+            
+            /* Greet */
+            $('#keanu').popover('show')
+    	    setTimeout(_=>{
+    	        $('#keanu').popover('hide')
+    	    },2000) 
+    	    
+    	    /* Check Magic Number */
+            var magicNumber = Math.floor(Math.random() * 10);
+            var number = eval($('number#number').html());
+            if (magicNumber === number) {
+                alert("You're Breathtaking!")
+            }
+        </script>
+    </body>
+</html>
